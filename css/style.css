@@ -1,0 +1,98 @@
+body {
+  counter-reset: section;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.legend:before {
+  content: "Illustration " counter(section, lower-roman) " : ";
+  counter-increment: section;
+}
+
+a {
+  text-decoration: none;
+}
+
+.lightbox {
+  text-align: center;
+}
+
+#img2,
+#img3,
+#img4 {
+  display: none;
+}
+
+.prev,
+.next {
+  display: inline-block;
+  margin: 0 1rem;
+  position: absolute;
+}
+
+.prev,
+.next,
+.close {
+  padding: 10px;
+  background-color: white;
+  color: black;
+}
+
+#img2:target {
+  display: block;
+}
+
+#img3:target {
+  display: block;
+}
+
+#img4:target {
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 6rem;
+  right: 4rem;
+}
+
+.lightbox {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+  top: 50%;
+  left: 0;
+}
+
+.next {
+  top: 50%;
+  right: 0;
+}
+
+.image {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+  border: 5px solid white;
+}
+
+#gallery {
+    position: absolute;
+    z-index: -1;
+    opacity: .5;
+}
+
+#gallery img {
+    width: 15rem;
+}
+
+#gallery .item {
+    float: left;
+}
+
+.close:target {
+    display: none;
+}
